@@ -1,0 +1,585 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <!–------------------LINK DO BOOTSTRAP----------------------–>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <!–------------------LINK DO BOOTSTRAP----------------------–>
+
+
+    <!–-------------------CODIGOS EM CSS----------------------–>
+    <script src="https://unpkg.com/sweetalert2@9/dist/sweetalert2.all.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/bulma.min.css" />
+    <!–-------------------CODIGOS EM CSS----------------------–>
+
+
+    <!–-------------------LINK DO FAVICON----------------------–>
+    <link rel="icon" href="favicon.ico" />
+    <!–-------------------LINK DO BOOTSTRAP----------------------–>
+
+
+    <!–------------------NOME DA JANELA----------------------–>
+    <title>Portal STARCOM | Perfil</title>
+    <!–------------------NOME DA JANELA----------------------–>
+  </head>
+  <body>
+    <div id="page" class="d-flex justify-content-center">
+
+
+      <!–------------------MENU DO SITE----------------------–>
+      <div id="sidebar" class="bg-light border-right">
+        <header>
+          <figure class="image is-128x128" >
+            <img src="./Images/Starcom.png" >
+          </figure>
+                
+          <SCRIPT LANGUAGE="JavaScript">
+          
+          d = new Date();
+          hour = d.getHours();
+          if(hour < 5)
+          {
+            document.write("Boa Noite!");
+          }
+          else
+          if(hour < 8)
+          {
+            document.write("Bom Dia!");
+          }
+          else
+          if(hour < 12)
+          {
+            document.write("Bom Dia!");
+          }
+          else
+          if(hour < 18)
+          {
+            document.write("Boa tarde!");
+          }
+          else
+          {
+            document.write("Boa noite!");
+          }
+          </SCRIPT> 
+           Seja bem vindo ao portal Starcom!
+
+        </header>
+        <nav class="list-group list-group-flush">
+          <a
+            href="doors.html"
+            class="list-group-item list-group-item-action bg-light"
+            >Portas</a
+          >
+          <a
+            href="contract.html"
+            class="list-group-item list-group-item-action bg-light"
+            >Contrato</a
+          >
+          <a
+            href="finance.html"
+            class="list-group-item list-group-item-action bg-light"
+            >Financeiro</a
+          >
+          <a
+            href="plans.html"
+            class="list-group-item list-group-item-action bg-light"
+            >Planos</a
+          >
+        </nav>
+      </div>
+      <!–------------------MENU DO SITE----------------------–>
+
+
+      <!–------------------BARRA SUPERIOR----------------------–>
+      <div id="page-content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <button id="sidebar-toggle" class="btn btn-outline-secondary">Menu</button>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="navbarSupportedContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto mt-2">
+              <li class="nav-item active">
+                <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  id="navbarDropdown"
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Meu Usuário</a
+                >
+                <div class="dropdown-menu dropdown-menu-center" aria-labelledby="navbarDropdown">
+                  <a href="profile.html" class="dropdown-item">Perfil</a>
+                  <div class="dropdown-divider"></div>
+                  <a href="#" class="dropdown-item" onclick="logout()">Sair</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      <!–------------------BARRA SUPERIOR----------------------–>
+
+      </BR>
+
+      <!–------------------FORMULÁRIO DE DADOS----------------------–>
+      <div class="container-fluid">
+        <div class="card align center">
+            <div class="card-body">
+            <form>
+              <h5 id="userInfo" class="card-subtitle mb-5" style = "visibility: hidden;"></h5>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="OutputEmail">Email</label>
+                  <input type="email" readonly class="form-control-plaintext" id="OutputEmail">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="OutputUsername">Cliente/Usuário:</label>
+                  <input id="OutputUsername" type="text" readonly class="form-control-plaintext" >
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="OutputName">Nome Completo:</label>
+                <input id="OutputName" type="text" readonly class="form-control-plaintext">
+              </div>
+              <div class="form-group">
+                <label for="OutputAdress">Endereço:</label>
+                <input id="OutputAdress" type="text" readonly class="form-control-plaintext">
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="OutputNeigh">Bairro</label>
+                  <input id="OutputNeigh" type="text" readonly class="form-control-plaintext">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="OutputCity">Cidade</label>
+                  <input type="text" readonly class="form-control-plaintext" id="OutputCity" >
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="OutputState">Estado</label>
+                  <input id="OutputState" readonly class="form-control-plaintext" name="estados-brasil">
+                </div>
+              </div>
+            </form>
+            <div id=randonUser>
+              <button
+                type="button"
+                onclick="colapseUSER()"
+                class="btn btn-outline-secondary"
+                data-toggle="collapse" 
+                data-target="#collapseTwo" 
+                aria-expanded="false" 
+                aria-controls="collapseTwo"
+              >
+                Atualizar meus dados         
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!–------------------FORMULÁRIO DE DADOS----------------------–>
+
+      </br>
+      <div id=admstarcomcontrol>
+        <!–------------------CONTROLE ADMINISTRATIVO----------------------–>
+        <center>
+          <div class="container-fluid">
+            <div class="card align-middle">
+            </br>
+              <div class="container-fluid">
+                <div class="form-group">
+                  <div class="form-row">
+                    <div id= colapse class="form-group col-md-3">
+                      <button
+                        type="button"
+                        onclick="colapseOne()"
+                        class="btn btn-outline-secondary"
+                        data-toggle="collapse" 
+                        data-target="#collapseOne" 
+                        aria-expanded="true" 
+                        aria-controls="collapseOne"
+                        value="collapseOne"
+                      >
+                        Cadastrar um novo usuário
+                      </button>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <button
+                        type="button"
+                        onclick="colapseThree()"
+                        class="btn btn-outline-secondary"
+                        data-toggle="collapse" 
+                        data-target="#collapseThree" 
+                        aria-expanded="false" 
+                        aria-controls="collapseThree"
+                        value="collapseThree"
+                      >
+                        Atualizar outro Usuário
+                      </button>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <button
+                        type="button"
+                        onclick="colapseTwo()"
+                        class="btn btn-outline-secondary"
+                        data-toggle="collapse" 
+                        data-target="#collapseTwo" 
+                        aria-expanded="false" 
+                        aria-controls="collapseTwo"
+                      >
+                        Atualizar meus dados
+                      </button>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <button
+                        type="button"
+                        onclick="colapseFour()"
+                        class="btn btn-outline-secondary"
+                        data-toggle="collapse" 
+                        data-target="#collapseTwo" 
+                        aria-expanded="false" 
+                        aria-controls="collapseTwo"
+                      >
+                        Cadastrar um novo cliente
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </center>
+        <!–------------------CONTROLE ADMINISTRATIVO----------------------–>
+      </div>
+
+      <div id=admstarcom>
+        </br>  
+
+        <!–------------------CONTROLE ADMINISTRATIVO----------------------–>
+        <div id="collapse" class="collapse"><center>
+          <div class="container-fluid">
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5>
+                    Cadastrar novo Usuário
+                  </h5>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <!–------------------CADASTRAR NOVO USUÁRIO----------------------–>
+                    <div class="collapse" id="collapseCadastrar">
+                      <div class="container-fluid">
+                        <form>
+                          <div class="form-group">
+                            <label for="inputNewEmail">Email:</label>
+                            <input id="inputNewEmail" type="email" class="form-control">
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputNewPassword">Insira a senha:</label>
+                              <input type="password" id="inputNewPassword" class="form-control">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputNewPassword2">Confirme a Senha:</label>
+                              <input id="inputNewPassword2" type="password" class="form-control" >
+                            </div>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="verificarUserPassword()"
+                          >
+                            Salvar perfil
+                          </button>
+                        </form>
+                      </div>
+                      </div>
+                    </div>
+                    <!–------------------CADASTRAR NOVO USUÁRIO----------------------–>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5>
+                    Atualizar meus dados
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <!–------------------EDITAR DADOS ADMINISTRADOR----------------------–>
+                    <div class="collapse" id="collapseCadastrar">
+                      <div class="container-fluid">
+                        <div class="card-body">
+                        <form>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputEmail">Email</label>
+                              <input type="email" class="form-control" id="inputEmail">
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputUsername">Cliente/Usuário:</label>
+                              <input id="inputUsername" type="text" readonly class="form-control" >
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputName">Nome Completo:</label>
+                            <input id="inputName" type="text" class="form-control">
+                          </div>
+                          <div class="form-group">
+                            <label for="inputAdress">Endereço:</label>
+                            <input id="inputAdress" type="text" class="form-control">
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputNeigh">Bairro</label>
+                              <input id="inputNeigh" type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-4">
+                              <label for="inputCity">Cidade</label>
+                              <input type="text" class="form-control" id="inputCity" >
+                            </div>
+                            <div class="form-group col-md-2">
+                              <label for="inputState">Estado</label>
+                              <select id="inputState" class="form-control" name="estados-brasil">
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                              </select>
+                            </div>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="saveProfile()"
+                          >
+                            Salvar perfil
+                          </button>
+                        </form>   
+                      </div>
+                    </div>
+                    <!–------------------EDITAR DADOS ADMINISTRADOR----------------------–>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <h5>
+                    Atualizar dados de outro Usuário
+                  </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <!–------------------EDITAR DADOS----------------------–>
+                    <div class="collapse" id="collapseCadastrar">
+                      <div class="container-fluid">
+                        <div class="card-body">
+                        <form>
+                          <div id="dateFile" class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputUserUserUID">UID:</label>
+                              <input id="inputUserUserUID" type="text" class="form-control" readonly>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputUserUserID">ID:</label>
+                              <input id="inputUserUserID" type="text" class="form-control" readonly>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="userList">Email</label>
+                              <select id="userList" class="form-control">
+                                <option>Carregando ...</option>
+                              </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label for="inputUserUsername">Cliente/Usuário:</label>
+                              <select id="inputUserUsername" type="text" class="form-control">
+                                <option>Carregando ...</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputUserName">Nome Completo:</label>
+                            <input id="inputUserName" type="text" class="form-control">
+                          </div>
+                          <div class="form-group">
+                            <label for="inputUserAdress">Endereço:</label>
+                            <input id="inputUserAdress" type="text" class="form-control">
+                          </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputUserNeigh">Bairro</label>
+                              <input id="inputUserNeigh" type="text" class="form-control">
+                            </div>
+                            <div class="form-group col-md-4">
+                              <label for="inputUserCity">Cidade</label>
+                              <input type="text" class="form-control" id="inputUserCity" >
+                            </div>
+                            <div class="form-group col-md-2">
+                              <label for="inputUserState">Estado</label>
+                              <select id="inputUserState" class="form-control" name="estados-brasil">
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                              </select>
+                            </div>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="saveOtherUser()"
+                          >
+                            Atualizar Perfil
+                          </button>
+                        </form>   
+                      </div>
+                    </div>
+                    <!–------------------EDITAR DADOS----------------------–>  
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h5>
+                    Cadastrar novo Cliente
+                  </h5>
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body">
+                    <!–------------------CADASTRAR NOVO CLIENTE----------------------–>
+                    <div class="collapse" id="collapseCadastrarcliente">
+                      <div class="container-fluid">
+                        <form>
+                          <div class="form-group">
+                            <label for="inputNewCliente">Cliente:</label>
+                            <input id="inputNewCliente" type="text" class="form-control">
+                          </div>
+                          <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="cadastrarCliente()"
+                          >
+                            Salvar cliente
+                          </button>
+                        </form>
+                      </div>
+                      </div>
+                    </div>
+                    <!–------------------CADASTRAR NOVO CLIENTE----------------------–>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!–------------------CONTROLE ADMINISTRATIVO----------------------–>
+      </div>
+      
+        
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+
+    <script src="./js/init.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/admacess.js"></script>
+    <script src="./js/profile.js"></script>
+    <script>
+      $("#sidebar-toggle").click(function (e) {
+        e.preventDefault()
+        $("#page").toggleClass("toggled")
+      })
+    </script>
+  </body>
+</html>

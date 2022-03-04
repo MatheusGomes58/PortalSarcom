@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <!–------------------LINK DO BOOTSTRAP----------------------–>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <!–------------------LINK DO BOOTSTRAP----------------------–>
+
+
+    <!–-------------------CODIGOS EM CSS----------------------–>
+    <script src="https://unpkg.com/sweetalert2@9/dist/sweetalert2.all.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/bulma.min.css" />
+    <!–-------------------CODIGOS EM CSS----------------------–>
+
+
+    <!–-------------------LINK DO FAVICON----------------------–>
+    <link rel="icon" href="favicon.ico" />
+    <!–-------------------LINK DO BOOTSTRAP----------------------–>
+
+
+    <!–------------------NOME DA JANELA----------------------–>
+    <title>Portal STARCOM | Contrato</title>
+    <!–------------------NOME DA JANELA----------------------–>
+  </head>
+  <body>
+    <div id="page" class="d-flex">
+
+
+        <!–------------------MENU DO SITE----------------------–>
+      <div id="sidebar" class="bg-light border-right">
+        <header>
+          <figure class="image is-128x128" >
+            <img src="./Images/Starcom.png" >
+          </figure>
+                
+          <SCRIPT LANGUAGE="JavaScript">
+          
+          d = new Date();
+          hour = d.getHours();
+          if(hour < 5)
+          {
+            document.write("Boa Noite!");
+          }
+          else
+          if(hour < 8)
+          {
+            document.write("Bom Dia!");
+          }
+          else
+          if(hour < 12)
+          {
+            document.write("Bom Dia!");
+          }
+          else
+          if(hour < 18)
+          {
+            document.write("Boa tarde!");
+          }
+          else
+          {
+            document.write("Boa noite!");
+          }
+          </SCRIPT> 
+           Seja bem vindo ao portal Starcom!
+
+        </header>
+        <nav class="list-group list-group-flush">
+          <a
+            href="doors.html"
+            class="list-group-item list-group-item-action bg-light"
+            >Portas</a
+          >
+          <a
+            href="contract.html"
+            class="list-group-item list-group-item-action bg-light"
+            >Contrato</a
+          >
+          <a
+            href="finance.html"
+            class="list-group-item list-group-item-action bg-light"
+            >Financeiro</a
+          >
+          <a
+            href="plans.html"
+            class="list-group-item list-group-item-action bg-light"
+            >Planos</a
+          >
+        </nav>
+      </div>
+      <!–------------------MENU DO SITE----------------------–>
+
+
+      <!–------------------BARRA SUPERIOR----------------------–>
+      <div id="page-content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <button id="sidebar-toggle" class="btn btn-outline-secondary">Menu</button>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="navbarSupportedContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto mt-2">
+              <li class="nav-item active">
+                <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  id="navbarDropdown"
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Meu Usuário</a
+                >
+                <div
+                class="dropdown-menu dropdown-menu-center"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <a href="profile.html" class="dropdown-item">Perfil</a>
+                  <div class="dropdown-divider"></div>
+                  <a href="#" class="dropdown-item" onclick="logout()">Sair</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      <!–------------------BARRA SUPERIOR----------------------–>
+        
+      <!–------------------SELECIONAR CLIENTE----------------------–>
+      </br>
+      <div class="container-fluid" id="Atualizar">
+        <div class="row justify-content-md-center">
+          <div class="card col-6">
+          </br> 
+            <label for="inputUserUsernameValor" class="text-center">Cliente/Usuário:</label>
+            <select id="inputUserUsernameValor" type="text" class="form-control text-center">
+              <option>Carregando ...</option>
+            </select>
+          </br> 
+          </div>
+        </div>
+      </div>
+      <!–------------------SELECIONAR CLIENTE----------------------–>
+
+      </br> 
+      
+      <!–------------------VISUALIZAR CONTRATO----------------------–>   
+      <div class="container-fluid">
+        <div class="row justify-content-md-center">
+          <div class="card col-11 justify-content-md-center">
+            <div id="doctype">
+            </div>
+          </div>
+        </div>  
+      </div>    
+      <!–------------------VISUALIZAR CONTRATO----------------------–> 
+
+      </br> 
+
+      <!–------------------ATUALIZAR CONTRATO----------------------–>
+      <div class="container-fluid" id="Atualizarcontrato">
+        <div class="row justify-content-md-center">
+          <div class="card col-6 justify-content-md-center"><center>
+            </br> 
+            <label for="FormControlFile" class="text-center">Selecione o arquivo para atualizar</label>
+            <input type="file" class="form-control-file justify-content-md-center" id="FormControlFile">
+            </center>
+            </br>
+            <progress id="progress" value="0" class="form-control-file"></progress>
+            </br> 
+          </div>
+        </div>
+      </div>
+      <!–------------------ATUALIZAR CONTRATO----------------------–>          
+                  
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+
+    <script src="./js/init.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/Contract.js"></script>
+    <script>
+      $("#sidebar-toggle").click(function (e) {
+        e.preventDefault()
+        $("#page").toggleClass("toggled")
+      })
+    </script>
+  </body>
+</html>

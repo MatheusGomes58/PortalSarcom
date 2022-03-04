@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <!–------------------LINK DO BOOTSTRAP----------------------–>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <!–------------------LINK DO BOOTSTRAP----------------------–>
+
+
+    <!–-------------------CODIGOS EM CSS----------------------–>
+    <script src="https://unpkg.com/sweetalert2@9/dist/sweetalert2.all.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/bulma.min.css" />
+    <!–-------------------CODIGOS EM CSS----------------------–>
+
+
+    <!–-------------------LINK DO FAVICON----------------------–>
+    <link rel="icon" href="favicon.ico" />
+    <!–-------------------LINK DO BOOTSTRAP----------------------–>
+
+
+    <!–------------------NOME DA JANELA----------------------–>
+    <title>Portal STARCOM | Portas</title>
+    <!–------------------NOME DA JANELA----------------------–>
+  </head>
+  <body>
+    <div id="page" class="d-flex">
+
+
+        <!–------------------MENU DO SITE----------------------–>
+      <div id="sidebar" class="bg-light border-right">
+        <header>
+          <figure class="image is-128x128" >
+            <img src="./Images/Starcom.png" >
+          </figure>
+                
+          <SCRIPT LANGUAGE="JavaScript">
+          
+          d = new Date();
+          hour = d.getHours();
+          if(hour < 5)
+          {
+            document.write("Boa Noite!");
+          }
+          else
+          if(hour < 8)
+          {
+            document.write("Bom Dia!");
+          }
+          else
+          if(hour < 12)
+          {
+            document.write("Bom Dia!");
+          }
+          else
+          if(hour < 18)
+          {
+            document.write("Boa tarde!");
+          }
+          else
+          {
+            document.write("Boa noite!");
+          }
+          </SCRIPT> 
+           Seja bem vindo ao portal Starcom!
+
+        </header>
+        <nav class="list-group list-group-flush">
+          <a
+            href="doors.html"
+            class="list-group-item list-group-item-action bg-light"
+            >Portas</a
+          >
+          <a
+            href="contract.html"
+            class="list-group-item list-group-item-action bg-light"
+            >Contrato</a
+          >
+          <a
+            href="finance.html"
+            class="list-group-item list-group-item-action bg-light"
+            >Financeiro</a
+          >
+          <a
+            href="plans.html"
+            class="list-group-item list-group-item-action bg-light"
+            >Planos</a
+          >
+        </nav>
+      </div>
+      <!–------------------MENU DO SITE----------------------–>
+
+
+      <!–------------------BARRA SUPERIOR----------------------–>
+      <div id="page-content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <button id="sidebar-toggle" class="btn btn-outline-secondary">Menu</button>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="navbarSupportedContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto mt-2">
+              <li class="nav-item active">
+                <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  id="navbarDropdown"
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Meu Usuário</a
+                >
+                <div
+                class="dropdown-menu dropdown-menu-center"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <a href="profile.html" class="dropdown-item">Perfil</a>
+                  <div class="dropdown-divider"></div>
+                  <a href="#" class="dropdown-item" onclick="logout()">Sair</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      <!–------------------BARRA SUPERIOR----------------------–>
+
+      </br>
+      
+      <!–------------------BUSCAR RELATÓRIO----------------------–>
+      <div class="container-fluid" id=imprimir>
+        <div class="row justify-content-md-center">
+          <div class="card col-10"id="Atualizar">
+          </br> 
+            <div class="row justify-content-md-center">
+              <div class="container-fluid col-4" id="ADMACESS">
+                <label for="inputUserUsernameValor" class="text-center">Cliente/Usuário:</label>
+                <select id="inputUserUsernameValor" type="text" class="form-control text-center">
+                  <option>Carregando ...</option>
+                </select>
+              </div>
+              <div class="container-fluid col-4">
+                <label for="inputDoors" class="text-center">Porta:</label>
+                <select id="inputDoors" type="text" class="form-control text-center">
+                  <option>Carregando ...</option>
+                </select>
+              </br>
+                <div class="row" id="ADMINPUTDOOR">
+                  <div class="col-7.5">
+                    <input type="text" id="doorId" class="form-control text-center">
+                  </div>
+                  <div class="col-3">
+                    <button class="btn btn-outline-secondary" onclick="salvarDoor()">Cadastrar</button>
+                  </div>
+                </div>
+              </div>
+              <div class="container-fluid col-4">
+                <label for="inputReport" class="text-center">Relatório:</label>
+                <select id="inputReport" type="text" class="form-control text-center">
+                  <option></option>
+                  <option>Especificações</option>
+                </select>
+              </div>
+            </div>
+            </br>
+            <button class="btn btn-outline-secondary" onclick="pesquisar()">Pesquisar</button>
+            </br>
+            <button class="btn btn-outline-secondary" onclick="addReport()" id="ADM">Salvar</button>
+            </br>
+            <button class="btn btn-outline-secondary" onclick="printPDF()">Imprimir</button>
+            </br>
+          </div>
+        </div>
+      </div>
+      <!–------------------BUSCAR RELATÓRIO----------------------–>
+
+
+      <div id="imprimir">
+        <!–------------------CABEÇALHO----------------------–>
+        <br><br>
+        <div class="container-fluid col-10">
+          <div class="row">
+            <table class="table table-bordered table-striped">
+              <tr >
+                <th class="text-center" colspan="6">
+                  <span class="h4" id="document"></span>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  Cliente:
+                </th>
+                <th>
+                  <span class="h6" id="client"></span>
+                </th>
+                <th>
+                  Porta:
+                </th>
+                <th>
+                  <span class="h6" id="door"></span>
+                </th>
+                <th>
+                  Data da instalação:
+                </th>
+                <th>
+                  <input type="date" id="firstDate" class="form-control-plaintext">
+                </th>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!–------------------CABEÇALHO----------------------–>
+
+        <!–------------------EQUIPAMENTOS----------------------–>
+        <br><br>
+        <div class="container-fluid col-10">
+          <div class="row">
+            <table class="table table-bordered table-striped">
+              <thead >
+                <tr>
+                  <th scope="col" class="col-3"><h4 class="h6 text-center">Equipamento</h4></th>
+                  <th scope="col" class="col-2"><h4 class="h6 text-center">Modelo</h4></th>
+                  <th scope="col" class="col-2"><h4 class="h6 text-center">Fabricante</h4></th>
+                  <th scope="col" class="col-3"><h4 class="h6 text-center">Vida útil</h4></th>
+                  <th scope="col" class="col-2"><h4 class="h6 text-center">Data</h4></th>
+                </tr>
+              </thead>
+              <tbody id="criarnovoregistro">
+                <tr id="confidencial">
+                  <th class="col-xl-auto">
+                    <select id="equipament" type="text" class="form-control text-center">
+                      <option>Carregando ...</option>
+                    </select>
+                  </th>
+                  <th class="col-xl-auto"><input id="model" type="text" class="form-control text-center"></th>
+                  <th class="col-xl-auto"><input id="fabricant" type="text" class="form-control text-center"></th>
+                  <th class="col-xl-auto text-center"><h7 class="text-center" id="rangeValue"></h7><input id="range" type="range" class="form-control text-center"></th>
+                  <th class="col-xl-auto"><input id="date" type="date" class="form-control text-center"></th>
+                </tr>
+              </tbody>
+              <tbody id="tableItem"></tbody>
+            </table>
+            </br>
+            <span class="h6">Observações e alterações:</span>
+            </br>
+            <textarea id="Observacoes" class="form-control" ></textarea>
+          </div>
+        </div>
+        <!–------------------EQUIPAMENTOS----------------------–>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-database.js"></script>
+
+    <script src="./js/init.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/doors.js"></script>
+    <script>
+      $("#sidebar-toggle").click(function (e) {
+        e.preventDefault()
+        $("#page").toggleClass("toggled")
+      })
+    </script>
+  </body>
+</html>

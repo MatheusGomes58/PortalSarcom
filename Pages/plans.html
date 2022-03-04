@@ -1,0 +1,658 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <!–------------------LINK DO BOOTSTRAP----------------------–>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <!–------------------LINK DO BOOTSTRAP----------------------–>
+
+
+    <!–-------------------CODIGOS EM CSS----------------------–>
+    <script src="https://unpkg.com/sweetalert2@9/dist/sweetalert2.all.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/bulma.min.css" />
+    <!–-------------------CODIGOS EM CSS----------------------–>
+
+
+    <!–-------------------LINK DO FAVICON----------------------–>
+    <link rel="icon" href="favicon.ico" />
+    <!–-------------------LINK DO BOOTSTRAP----------------------–>
+
+
+    <!–------------------NOME DA JANELA----------------------–>
+    <title>Portal STARCOM | Planos</title>
+    <!–------------------NOME DA JANELA----------------------–>
+  </head>
+  <body>
+    <div id="page" class="d-flex">
+
+
+    
+      <!–------------------MENU DO SITE----------------------–>
+      <div id="sidebar" class="bg-light border-right">
+        <header>
+          <figure class="image is-128x128" >
+            <img src="./Images/Starcom.png" >
+          </figure>
+                
+          <SCRIPT LANGUAGE="JavaScript">
+          
+          d = new Date();
+          hour = d.getHours();
+          if(hour < 5)
+          {
+            document.write("Boa Noite!");
+          }
+          else
+          if(hour < 8)
+          {
+            document.write("Bom Dia!");
+          }
+          else
+          if(hour < 12)
+          {
+            document.write("Bom Dia!");
+          }
+          else
+          if(hour < 18)
+          {
+            document.write("Boa tarde!");
+          }
+          else
+          {
+            document.write("Boa noite!");
+          }
+          </SCRIPT> 
+           Seja bem vindo ao portal Starcom!
+
+        </header>
+        <nav class="list-group list-group-flush">
+          <a
+            href="doors.html"
+            class="list-group-item list-group-item-action bg-light"
+            >Portas</a
+          >
+          <a
+            href="contract.html"
+            class="list-group-item list-group-item-action bg-light"
+            >Contrato</a
+          >
+          <a
+            href="finance.html"
+            class="list-group-item list-group-item-action bg-light"
+            >Financeiro</a
+          >
+          <a
+            href="plans.html"
+            class="list-group-item list-group-item-action bg-light"
+            >Planos</a
+          >
+        </nav>
+      </div>
+      <!–------------------MENU DO SITE----------------------–>
+
+
+      <!–------------------BARRA SUPERIOR----------------------–>
+      <div id="page-content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+          <button id="sidebar-toggle" class="btn btn-outline-secondary">Menu</button>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div id="navbarSupportedContent" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto mt-2">
+              <li class="nav-item active">
+                <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  id="navbarDropdown"
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  >Meu Usuário</a
+                >
+                <div
+                class="dropdown-menu dropdown-menu-center"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <a href="profile.html" class="dropdown-item">Perfil</a>
+                  <div class="dropdown-divider"></div>
+                  <a href="#" class="dropdown-item" onclick="logout()">Sair</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      <!–------------------BARRA SUPERIOR----------------------–>
+
+      <!–------------------USUÁRIOS----------------------–>
+      <div class="container-fluid">
+        <div class="row justify-content-md-center">
+          <div class="card col-12"id="Atualizar">
+          </br> 
+            <label for="inputUserUsernameValor" class="text-center">Cliente/Usuário:</label>
+            <select id="inputUserUsernameValor" type="text" class="form-control text-center">
+              <option>Carregando ...</option>
+            </select>
+          </br>
+          <center>
+            <button
+              type="button"
+              onclick="USER()"
+              class="btn btn-outline-secondary"
+            >
+              Atualizar valores        
+            </button>
+            </br>
+            </br>
+            <div id="collapseTwo">
+              <div id="collapseTwo" aria-labelledby="headingTwo">
+                <div>
+                  <!–------------------EDITAR DADOS ADMINISTRADOR----------------------–>
+                  <div id="collapseCadastrar">
+                    <div class="container-fluid col-12">
+                      <div class="card-body col-12">
+                        <!–------------------PLANOS----------------------–>
+                        <div class="card-deck mb-3 text-center">
+                          <div class="card mb-4 shadow-sm" style="background-color: #81AAE1;">
+                            <div class="card-header">
+                              <h4 class="h4 my-0 font-weight-normal">CONVENCIONAL</h4>
+                            </div>
+                            <div class="card-body">
+                              <h1 class="card-title pricing-card-title"><input type="text" class="form-control-plaintext text-center" id="inputValor21" readonly></h1>
+                              <ul class="list-unstyled mt-3 mb-4">
+                                <li>
+                                  Atendimentos emegencial dentro do horário comercial (Prazo de 48 horas para atendimento)
+                                  <input type="text" class="form-control-plaintext text-center" id="inputValor1">
+                                </li>
+                                <li>
+                                  Atendimentos emegencial fora do horário comercial (Prazo de 36 horas para atendimento)
+                                  <input type="text" class="form-control-plaintext text-center" id="inputValor2">
+                                </li>
+                                <li>
+                                  Atendimentos em conjunto
+                                  <input type="text" class="form-control-plaintext text-center" id="inputValor3">
+                                </li>
+                              </ul>
+                              <button type="button" class="btn btn-lg btn-block btn-outline-primary">Conhecer</button>
+                            </div>
+                          </div>
+                          <div class="card mb-4 shadow-sm" style="background-color: #F1AF8D;">
+                            <div class="card-header">
+                              <h4 class="h4 my-0 font-weight-normal">PLANO BRONZE</h4>
+                            </div>
+                            <div class="card-body">
+                              <h1 class="card-title pricing-card-title"><input type="text" class="form-control-plaintext text-center" id="inputValor20" readonly></h1>
+                              <ul class="list-unstyled mt-3 mb-4">
+                                <li>
+                                  Atendimentos emegencial dentro do horário comercial (Prazo de 48 horas para atendimento)
+                                  <input type="text" class="form-control-plaintext text-center" placeholder="INCLUSO" readonly>
+                                </li>
+                                <li>
+                                  Atendimentos emegencial fora do horário comercial (Prazo de 36 horas para atendimento)
+                                  <input type="text" class="form-control-plaintext text-center" id="inputValor22">
+                                </li>
+                                <li>
+                                  Atendimentos em conjunto
+                                  <input type="text" class="form-control-plaintext text-center" id="inputValor23">
+                                </li>
+                              </ul>
+                              <button type="button" class="btn btn-lg btn-block btn-primary">Conhecer</button>
+                            </div>
+                          </div>
+                          <div class="card mb-4 shadow-sm" style="background-color: #CDCFCF;">
+                            <div class="card-header">
+                              <h4 class="h4 my-0 font-weight-normal">PLANO PRATA</h4>
+                            </div>
+                            <div class="card-body">
+                              <h1 class="card-title pricing-card-title"><input type="text" class="form-control-plaintext text-center" id="inputValor19" readonly></h1>
+                              <ul class="list-unstyled mt-3 mb-4">
+                                <li>
+                                  Atendimentos emegencial dentro do horário comercial (Prazo de 48 horas para atendimento)
+                                  <input type="text" class="form-control-plaintext text-center" placeholder="INCLUSO" readonly>
+                                </li>
+                                <li>
+                                  Atendimentos emegencial fora do horário comercial (Prazo de 36 horas para atendimento)
+                                  <input type="text" class="form-control-plaintext text-center" placeholder="INCLUSO" readonly>
+                                </li>
+                                <li>
+                                  Atendimentos em conjunto
+                                  <input type="text" class="form-control-plaintext text-center" id="inputValor24">
+                                </li>
+                              </ul>
+                              <button type="button" class="btn btn-lg btn-block btn-primary">Contate-nos</button>
+                            </div>
+                          </div>
+                          <div class="card mb-4 shadow-sm" style="background-color: #F8E592;">
+                            <div class="card-header">
+                              <h4 class="h4 my-0 font-weight-normal">PLANO OURO</h4>
+                            </div>
+                            <div class="card-body">
+                              <h1 class="card-title pricing-card-title"><input type="text" class="form-control-plaintext text-center" id="inputValor18" readonly></h1>
+                              <ul class="list-unstyled mt-3 mb-4">
+                                <li>
+                                  Atendimentos emegencial dentro do horário comercial (Prazo de 48 horas para atendimento)
+                                  <input type="text" class="form-control-plaintext text-center" placeholder="INCLUSO" readonly>
+                                </li>
+                                <li>
+                                  Atendimentos emegencial fora do horário comercial (Prazo de 36 horas para atendimento)
+                                  <input type="text" class="form-control-plaintext text-center" placeholder="INCLUSO" readonly>
+                                </li>
+                                <li>
+                                  Atendimentos em conjunto
+                                  <input type="text" class="form-control-plaintext text-center" placeholder="INCLUSO" readonly>
+                                </li>
+                              </ul>
+                              <button type="button" class="btn btn-lg btn-block btn-primary">Contate-nos</button>
+                            </div>
+                          </div>
+                        </div>
+                      <!–------------------PLANOS---------------------->
+                        </br>
+                        <!–------------------TABELA DE PRODUTOS----------------------–>
+                        <table class="table table-bordered table-striped">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">Código</th>
+                              <th scope="col">Item</th>
+                              <th scope="col" class="text-center">Preço</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Guia de piso</td>
+                              <td>
+                                <div>
+                                  <input type="text" class="form-control-plaintext" id="inputValor4" >
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Correia dentada de transmissão</td>
+                              <td>
+                                <div>
+                                  <input type="text" class="form-control-plaintext" id="inputValor5" >
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Esticador de correia</td>
+                              <td>
+                                <div>
+                                  <input type="text" class="form-control-plaintext" id="inputValor6" >
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">4</th>
+                              <td>Carrinho de arraste</td>
+                              <td>
+                                <div>
+                                  <input type="text" class="form-control-plaintext" id="inputValor7" >
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">5</th>
+                              <td>Chave liga/desliga</td>
+                              <td>
+                                <div>
+                                  <input type="text" class="form-control-plaintext" id="inputValor8" >
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">6</th>
+                              <td>Sensor de movimento</td>
+                              <td>
+                                <div>
+                                  <input type="text" class="form-control-plaintext" id="inputValor9" >
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">7</th>
+                              <td>Sensor fotocélula</td>
+                              <td>
+                                <div>
+                                  <input type="text" class="form-control-plaintext" id="inputValor10" >
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">8</th>
+                              <td>Motor</td>
+                              <td>
+                                <div>
+                                  <input type="text" class="form-control-plaintext" id="inputValor11" >
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">9</th>
+                              <td>Trilho de alumínio</td>
+                              <td>
+                                <div>
+                                  <input type="text" class="form-control-plaintext" id="inputValor12" >
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">10</th>
+                              <td>Central de Comando</td>
+                              <td>
+                                <div>
+                                  <input type="text" class="form-control-plaintext" id="inputValor13" >
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">11</th>
+                              <td>Tampa de alumínio para trilho</td>
+                              <td>
+                                <div>
+                                  <input type="text" class="form-control-plaintext" id="inputValor14" >
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">12</th>
+                              <td>Folha da porta (Vidro temperado)</td>
+                              <td>
+                                <div>
+                                  <input type="text" class="form-control-plaintext" id="inputValor15" >
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">13</th>
+                              <td>Folha da porta (Caixilho + Vidro)</td>
+                              <td>
+                                <div>
+                                  <input type="text" class="form-control-plaintext" id="inputValor16" >
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">14</th>
+                              <td>Barreira Antiesmagamento</td>
+                              <td>
+                                <div>
+                                  <input type="text" class="form-control-plaintext" id="inputValor17" >
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!–------------------TABELA DE PRODUTOS----------------------–>
+                        <button
+                          type="button"
+                          class="btn btn-primary"
+                          onclick="saveOtherValor()"
+                        >
+                          Salvar Valores
+                        </button>  
+                      </div>
+                    </div>
+                  </div>
+                  <!–------------------EDITAR DADOS ADMINISTRADOR----------------------–>
+                </div>
+              </div>
+            </div>
+          </center>
+          </div>
+        </div>
+      </div>
+      <!–------------------USUÁRIOS----------------------–>
+      </br>
+
+      <div class="container-fluid">
+        <div class="row justify-content-md-center">
+          <!–------------------PLANOS----------------------–>
+          <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 shadow-sm" style="background-color: #81AAE1;">
+              <div class="card-header">
+                <h4 class="h4 my-0 font-weight-normal">CONVENCIONAL</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><input type="text" class="form-control-plaintext text-center" id="OutputValor21" readonly></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>
+                    Atendimentos emegencial dentro do horário comercial (Prazo de 48 horas para atendimento)
+                    <input type="text" class="form-control-plaintext text-center" id="OutputValor1" readonly>
+                  </li>
+                  <li>
+                    Atendimentos emegencial fora do horário comercial (Prazo de 36 horas para atendimento)
+                    <input type="text" class="form-control-plaintext text-center" id="OutputValor2" readonly>
+                  </li>
+                  <li>
+                    Atendimentos em conjunto
+                    <input type="text" class="form-control-plaintext text-center" id="OutputValor3" readonly>
+                  </li>
+                </ul>
+                <button type="button" class="btn btn-lg btn-block btn-outline-primary">Conhecer</button>
+              </div>
+            </div>
+            <div class="card mb-4 shadow-sm" style="background-color: #F1AF8D;">
+              <div class="card-header">
+                <h4 class="h4 my-0 font-weight-normal">PLANO BRONZE</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><input type="text" class="form-control-plaintext text-center" id="OutputValor20" readonly></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>
+                    Atendimentos emegencial dentro do horário comercial (Prazo de 48 horas para atendimento)
+                    <input type="text" class="form-control-plaintext text-center" placeholder="INCLUSO" readonly>
+                  </li>
+                  <li>
+                    Atendimentos emegencial fora do horário comercial (Prazo de 36 horas para atendimento)
+                    <input type="text" class="form-control-plaintext text-center" id="OutputValor22" readonly>
+                  </li>
+                  <li>
+                    Atendimentos em conjunto
+                    <input type="text" class="form-control-plaintext text-center" id="OutputValor23" readonly>
+                  </li>
+                </ul>
+                <button type="button" class="btn btn-lg btn-block btn-primary">Conhecer</button>
+              </div>
+            </div>
+            <div class="card mb-4 shadow-sm" style="background-color: #CDCFCF;">
+              <div class="card-header">
+                <h4 class="h4 my-0 font-weight-normal">PLANO PRATA</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><input type="text" class="form-control-plaintext text-center" id="OutputValor19" readonly></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>
+                    Atendimentos emegencial dentro do horário comercial (Prazo de 48 horas para atendimento)
+                    <input type="text" class="form-control-plaintext text-center" placeholder="INCLUSO" readonly>
+                  </li>
+                  <li>
+                    Atendimentos emegencial fora do horário comercial (Prazo de 36 horas para atendimento)
+                    <input type="text" class="form-control-plaintext text-center" placeholder="INCLUSO" readonly>
+                  </li>
+                  <li>
+                    Atendimentos em conjunto
+                    <input type="text" class="form-control-plaintext text-center" id="OutputValor24" readonly>
+                  </li>
+                </ul>
+                <button type="button" class="btn btn-lg btn-block btn-primary">Contate-nos</button>
+              </div>
+            </div>
+            <div class="card mb-4 shadow-sm" style="background-color: #F8E592;">
+              <div class="card-header">
+                <h4 class="h4 my-0 font-weight-normal">PLANO OURO</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><input type="text" class="form-control-plaintext text-center" id="OutputValor18" readonly></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>
+                    Atendimentos emegencial dentro do horário comercial (Prazo de 48 horas para atendimento)
+                    <input type="text" class="form-control-plaintext text-center" placeholder="INCLUSO" readonly>
+                  </li>
+                  <li>
+                    Atendimentos emegencial fora do horário comercial (Prazo de 36 horas para atendimento)
+                    <input type="text" class="form-control-plaintext text-center" placeholder="INCLUSO" readonly>
+                  </li>
+                  <li>
+                    Atendimentos em conjunto
+                    <input type="text" class="form-control-plaintext text-center" placeholder="INCLUSO" readonly>
+                  </li>
+                </ul>
+                <button type="button" class="btn btn-lg btn-block btn-primary">Contate-nos</button>
+              </div>
+            </div>
+          </div>
+        <!–------------------PLANOS---------------------->
+      </div>
+      
+      </br>
+      <div class="container-fluid">
+        <div class="row justify-content-md-center">
+          <div class="col-md-10">
+            <div class="card">
+              <!–------------------TABELA DE PRODUTOS----------------------–>
+            <table class="table table-bordered table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col" class="text-center">Código</th>
+                  <th scope="col" class="text-center">Item</th>
+                  <th scope="col" class="text-center">Preço</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="text-center">1</th>
+                  <td class="text-center">Guia de piso</td>
+                  <td><input type="text" class="form-control-plaintext text-center" id="OutputValor4" readonly></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-center">2</th>
+                  <td class="text-center">Correia dentada de transmissão</td>
+                  <td><input type="text" class="form-control-plaintext text-center" id="OutputValor5" readonly></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-center">3</th>
+                  <td class="text-center">Esticador de correia</td>
+                  <td><input type="text" class="form-control-plaintext text-center" id="OutputValor6" readonly></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-center">4</th>
+                  <td class="text-center">Carrinho de arraste</td>
+                  <td><input type="text" class="form-control-plaintext text-center" id="OutputValor7" readonly></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-center">5</th>
+                  <td class="text-center">Chave liga/desliga</td>
+                  <td><input type="text" class="form-control-plaintext text-center" id="OutputValor8" readonly></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-center">6</th>
+                  <td class="text-center">Sensor de movimento</td>
+                  <td><input type="text" class="form-control-plaintext text-center"  id="OutputValor9" readonly></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-center">7</th>
+                  <td class="text-center">Sensor fotocélula</td>
+                  <td><input type="text" class="form-control-plaintext text-center"  id="OutputValor10" readonly></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-center">8</th>
+                  <td class="text-center">Motor</td>
+                  <td><input type="text" class="form-control-plaintext text-center" id="OutputValor11" readonly></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-center">9</th>
+                  <td class="text-center">Trilho de alumínio</td>
+                  <td><input type="text" class="form-control-plaintext text-center" id="OutputValor12" readonly></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-center">10</th>
+                  <td class="text-center">Central de Comando</td>
+                  <td><input type="text" class="form-control-plaintext text-center" id="OutputValor13" readonly></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-center">11</th>
+                  <td class="text-center">Tampa de alumínio para trilho</td>
+                  <td><input type="text" class="form-control-plaintext text-center" id="OutputValor14" readonly></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-center">12</th>
+                  <td class="text-center">Folha da porta (Vidro temperado)</td>
+                  <td><input type="text" class="form-control-plaintext text-center" id="OutputValor15" readonly></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-center">13</th>
+                  <td class="text-center">Folha da porta (Caixilho + Vidro)</td>
+                  <td><input type="text" class="form-control-plaintext text-center"  id="OutputValor16" readonly></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-center">14</th>
+                  <td class="text-center">Barreira Antiesmagamento</td>
+                  <td><input type="text" class="form-control-plaintext text-center"  id="OutputValor17" readonly></td>
+                </tr>
+              </tbody>
+            </table>
+            <!–------------------TABELA DE PRODUTOS----------------------–>
+            </div>
+          </div>
+        </div>
+      </div>
+    </br>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-storage.js"></script>
+
+    <script src="./js/init.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/plans.js"></script>
+    <script>
+      $("#sidebar-toggle").click(function (e) {
+        e.preventDefault()
+        $("#page").toggleClass("toggled")
+      })
+    </script>
+  </body>
+</html>
