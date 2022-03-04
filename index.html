@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- ===============================================-->
+    <!--    Document Title-->
+    <!-- ===============================================-->
+    <title>Portal do cliente STARCOM</title>
+
+
+    <!-- ===============================================-->
+    <!--    Favicons-->
+    <!-- ===============================================-->
+    <link rel="icon" href="favicon.ico" />
+
+
+    <!-- ===============================================-->
+    <!--    Stylesheets-->
+    <!-- ===============================================-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link href="vendors/prism/prism.css" rel="stylesheet">
+    <link href="assets/css/theme.css" rel="stylesheet" />
+    <link href="assets/css/user.css" rel="stylesheet" />
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="https://unpkg.com/sweetalert2@9/dist/sweetalert2.all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+  </head>
+
+
+  <body>
+
+    <!-- ===============================================-->
+    <!--    Main Content-->
+    <!-- ===============================================-->
+    <main class="main" id="top">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" data-navbar-on-scroll="data-navbar-on-scroll">
+        <div class="container"><a class="navbar-brand" href="index.html"><img src="./Imagens/Starcom.png" height="60" width="60"><span class="text-primary fs-3 ms-2 fw-bolder">STAR</span><span class="fw-thin text-300 fs-3">COM</span></a>
+          <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse pt-4 pt-lg-0" id="navbarSupportedContent">
+            <p class="mb-0 ms-auto text-light fs-0 fw-normal"><i class="fas fa-phone-alt me-2"></i><a class="text-light" href="tel:(19)31141823">(19) 3114-1823</a></p>
+            <ul class="navbar-nav ms-auto border-bottom border-lg-bottom-0 pt-2 pt-lg-0">
+              <li class="nav-item px-2"><a class="nav-link active" aria-current="page" href="#">Início</a></li>
+              <li class="nav-item px-2"><a class="nav-link" href="#contact">Contato</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <section class="py-0">
+        <div class="bg-holder" style="background-image:url(assets/img/illustrations/bg.png);background-position:left center;background-size:auto 816px;">
+        </div>
+        <!--/.bg-holder-->
+
+        <div class="container">
+          <div class="row align-items-center min-vh-100">
+            <div class="col-md-7 col-xl-7 pt-9 text-md-start text-center">
+              <h1 class="display-2 text-light fw-thin">Desde sempre com a melhor <br class="d-none d-xl-block" />Qualidade e <strong class="fw-bolder"> EXCELÊNCIA </strong></h1>
+              <p class="fs-2 text-400">Consulte agora os dados referênte ao seu equipamento <br class="d-none d-xxl-block" />através de nosso sistema! </p><a class="btn btn-primary btn-ensurance mt-5" href="#!"><span class="fas fa-chevron-right fa-xs btn-icon"></span><span class="btn-text">Acesse agora</span></a>
+            </div>
+            <div class="col-md-5 col-xl-5 pe-xxl-0">
+              <div class="card card-bg shadow hero-header-form">
+                <div class="card-body p-4 p-xl-6"><center>
+                  <figure class="image is-128x128">
+                    <img src="./Imagens/Starcom.png" height="128" width="128">
+                  </figure></center>
+                  <h2 class="text-100 text-center">Acesse agora o Portal do Cliente</h2>
+
+                  <div class="box">
+                    <form action="login.php" method="POST">
+                      <div class="field">
+                          <div class="control">
+                              <input type="email" name="email" id="email" class="form-control input-box form-ensurance-header-control" placeholder="Insira seu E-mail aqui" autofocus="">
+                          </div>
+                      </div>
+        
+                      <div class="field">
+                          <div class="control">
+                              <input type="password" name="password" id="password" class="form-control input-box form-ensurance-header-control" placeholder="Insira sua Senha aqui">
+                          </div>
+                      </div>
+                      <br>
+                      <div class="col-12 d-grid">
+                        <button type="button" class="btn btn-primary rounded-pill" onclick="login()">Entrar</button>
+                      </div> 
+                    </form>
+                  </div>   
+                    
+                    
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section id="contact">
+
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-6 col-xl-7 mb-4 order-0 order-sm-0"><a class="logo-footer fs-7" href="index.html"><img src="./Imagens/Starcom.png" height="80" width="80"><span class="text-primary fw-bolder">STAR</span><span class="fw-thin text-300">COM</span></a>
+              <p class="text-light my-4"> <i class="fas fa-map-marker-alt me-3"></i><span class="text-light">Rua Alair Moreira, 349 <br/>Bandeirante 1, Sumaré-SP 13181-750</p>
+              <p class="text-light"> <i class="fas fa-envelope me-3 text-primary"> </i><a href="mailto:contato@starcomautoportas.com.br">contato@starcomautoportas.com.br</a></p>
+              <p class="text-light"> <i class="fas fa-phone-alt me-3 text-primary"> </i><a href="tel:1931141823">(19) 3114-1823</a></p>
+            </div>
+            <div class="col-12 col-lg-6 col-xl-5">
+              <h3 class="text-200 my-4">Redes Sociais</h3>
+              <form class="position-relative">
+                <ul class="list-unstyled list-inline my-2">
+                  <li class="list-inline-item"><a class="text-decoration-none" href="https://www.facebook.com/starcom.portasautomaticas"><i class="fab fa-facebook-square fa-2x social-icons"></i></a></li>
+                  <li class="list-inline-item"><a class="text-decoration-none" href="https://instagram.com/starcomportasautomaticas?utm_medium=copy_link"><i class="fab fa-instagram fa-2x social-icons"></i></a></li>
+                  <li class="list-inline-item"><a class="text-decoration-none"  href="https://web.whatsapp.com/send?phone=551931141823&amp;text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20StarCom"><i class="fab fa-whatsapp fa-2x social-icons"></i></a></li>
+                </ul>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+
+      <!-- ============================================-->
+      <!-- <section> begin ============================-->
+      <section class="py-0 bg-black">
+
+        <div class="container-fluid text-light py-4" style="background: #051225;">
+          <div class="container">
+              <div class="row g-0">
+                  <div class="col-md-6 text-center text-md-start">
+                      <p class="mb-md-0">©STARCOM - Portas automáticas e Sombreadores</p>
+                  </div>
+                  <div class="col-md-6 text-center text-md-end">
+                      <p class="mb-0">
+                          Desenvolvido por MatheusGomes58
+                      </p>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <!-- end of .container-->
+
+      </section>
+      <!-- <section> close ============================-->
+      <!-- ============================================-->
+
+
+    </main>
+    <!-- ===============================================-->
+    <!--    End of Main Content-->
+    <!-- ===============================================-->
+
+
+
+
+    <!-- ===============================================-->
+    <!--    JavaScripts-->
+    <!-- ===============================================-->
+    <script src="vendors/popper/popper.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script src="vendors/anchorjs/anchor.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="vendors/fontawesome/all.min.js"></script>
+    <script src="vendors/lodash/lodash.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+    <script src="vendors/prism/prism.js"></script>
+    <script src="assets/js/theme.js"></script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+    <script src="./Pages/js/init.js"></script>
+    <script src="./Pages/js/auth.js"></script>
+
+  </body>
+
+</html>
